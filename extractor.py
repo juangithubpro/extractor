@@ -2,8 +2,6 @@ import requests
 from bs4 import BeautifulSoup
 from urllib.parse import urljoin
 
-
-
 # ==============================================================================
 # DICCIONARIO DE CLASES: Acá mapeamos qué clase usa cada diario en su cuerpo
 # ==============================================================================
@@ -14,25 +12,11 @@ MAPEO_PORTALES = {
 
 def extraer_noticia_universal(url):
     headers = {
-    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
-    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
-    "Accept-Language": "es-AR,es;q=0.9,en-US;q=0.8,en;q=0.7",
-    "Accept-Encoding": "gzip, deflate, br",
-    "Referer": "https://www.google.com/",
-    "Cache-Control": "no-cache",
-    "Pragma": "no-cache",
-    "DNT": "1",
-    "Connection": "keep-alive",
-    "Upgrade-Insecure-Requests": "1"
-}
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+    }
     
     try:
-        respuesta = requests.get(
-            url,
-            headers=headers,
-            timeout=15,
-            allow_redirects=True
-        )
+        respuesta = requests.get(url, headers=headers, timeout=10)
         if respuesta.status_code != 200:
             return {"error": f"Error de conexión: {respuesta.status_code}"}
         
