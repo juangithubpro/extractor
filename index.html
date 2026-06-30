@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capsula Webs - Extractor de Noticias</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- FontAwesome para el ícono de la lupa -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/profile.min.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="logo">🧬 Capsula Webs</div>
+        <nav class="menu">
+            <a href="#">HOME</a>
+            <a href="#">FAQ</a>
+            <a href="#">PROYECTOS</a>
+        </nav>
+    </header>
+
+    <main class="hero-container">
+        <div class="hero-content">
+            <h1>Capsula Webs</h1>
+            <p class="subtitle">El extractor de noticias rápido y limpio. Obtené el texto e imágenes sin publicidad.</p>
+            
+            <div class="search-box">
+                <div class="input-wrapper">
+                    <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                    <input type="url" id="news-url" placeholder="Pegá el link de la noticia acá...">
+                </div>
+                <button id="extract-btn">EXTRAER</button>
+            </div>
+            <p class="footer-text">Introduce la URL de un artículo y deja que la magia suceda.!</p>
+        </div>
+
+        <!-- Recuadro de resultados (oculto al inicio) -->
+        <section id="result-box" class="result-box hidden">
+            <h2 id="res-title">Título de la Noticia</h2>
+            <hr class="divider">
+            <div class="res-content">
+                <div id="res-image-container" class="res-image-container">
+                    <!-- Aquí se cargará la imagen destacada -->
+                </div>
+                <div id="res-text" class="res-text">
+                    <!-- Aquí se cargarán los párrafos -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
